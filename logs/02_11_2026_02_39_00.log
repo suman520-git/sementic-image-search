@@ -1,0 +1,45 @@
+{"base_dir": "D:\\sementic-image-search", "timestamp": "2026-02-10T21:09:00.083518Z", "level": "info", "event": "BASE_DIR resolved successfully"}
+{"env_path": "D:\\sementic-image-search\\.env", "timestamp": "2026-02-10T21:09:00.084557Z", "level": "info", "event": ".env loaded successfully"}
+{"value": "D:\\sementic-image-search\\images", "timestamp": "2026-02-10T21:09:00.084557Z", "level": "info", "event": "IMAGES_ROOT configured"}
+{"value": "D:\\sementic-image-search\\data\\query_images", "timestamp": "2026-02-10T21:09:00.085546Z", "level": "info", "event": "QUERY_IMAGE_ROOT configured"}
+{"value": "D:\\sementic-image-search\\data\\retrieved", "timestamp": "2026-02-10T21:09:00.085546Z", "level": "info", "event": "RETRIEVED_ROOT configured"}
+{"value": "ViT-B-32", "timestamp": "2026-02-10T21:09:00.085546Z", "level": "info", "event": "CLIP_MODEL_NAME loaded"}
+{"value": "laion2b_s34b_b79k", "timestamp": "2026-02-10T21:09:00.086545Z", "level": "info", "event": "CLIP_CHECKPOINT loaded"}
+{"value": "cpu", "timestamp": "2026-02-10T21:09:00.086545Z", "level": "info", "event": "DEVICE selected"}
+{"value": "https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333", "timestamp": "2026-02-10T21:09:00.086545Z", "level": "info", "event": "QDRANT_URL loaded"}
+{"timestamp": "2026-02-10T21:09:00.087461Z", "level": "info", "event": "QDRANT_API_KEY loaded (hidden)"}
+{"value": "semantic-image-search", "timestamp": "2026-02-10T21:09:00.087461Z", "level": "info", "event": "QDRANT_COLLECTION loaded"}
+{"value": 512, "timestamp": "2026-02-10T21:09:00.087461Z", "level": "info", "event": "VECTOR_SIZE loaded"}
+{"value": "gpt-4o-mini", "timestamp": "2026-02-10T21:09:00.087461Z", "level": "info", "event": "OPENAI_MODEL loaded"}
+{"timestamp": "2026-02-10T21:09:02.341555Z", "level": "info", "event": "Initializing ImageSearchService"}
+{"url": "https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333", "using_api_key": true, "timestamp": "2026-02-10T21:09:02.342555Z", "level": "info", "event": "Initializing Qdrant client"}
+HTTP Request: GET https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+{"timestamp": "2026-02-10T21:09:03.636471Z", "level": "info", "event": "Qdrant client initialized successfully"}
+{"timestamp": "2026-02-10T21:09:03.636471Z", "level": "info", "event": "Fetching existing Qdrant collections..."}
+HTTP Request: GET https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+{"collection": "semantic-image-search", "timestamp": "2026-02-10T21:09:04.296634Z", "level": "info", "event": "Using existing Qdrant collection"}
+{"collection": "semantic-image-search", "retrieved_root": "D:\\sementic-image-search\\data\\retrieved", "timestamp": "2026-02-10T21:09:04.297578Z", "level": "info", "event": "ImageSearchService initialized"}
+{"timestamp": "2026-02-10T21:09:04.297578Z", "level": "info", "event": "Initializing IndexService..."}
+{"timestamp": "2026-02-10T21:09:04.298587Z", "level": "info", "event": "Fetching existing Qdrant collections..."}
+HTTP Request: GET https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+{"collection": "semantic-image-search", "timestamp": "2026-02-10T21:09:04.518546Z", "level": "info", "event": "Using existing Qdrant collection"}
+{"collection": "semantic-image-search", "timestamp": "2026-02-10T21:09:04.518546Z", "level": "info", "event": "IndexService initialized successfully"}
+{"timestamp": "2026-02-10T21:09:04.519546Z", "level": "info", "event": "Services initialized successfully"}
+{"filename": "query.png", "timestamp": "2026-02-10T21:11:32.788277Z", "level": "info", "event": "Image search request received"}
+{"path": "D:\\sementic-image-search\\data\\query_images\\query.png", "timestamp": "2026-02-10T21:11:32.793278Z", "level": "info", "event": "Uploaded query image saved"}
+{"image_path": "D:\\sementic-image-search\\data\\query_images\\query.png", "top_k": 5, "filter": null, "timestamp": "2026-02-10T21:11:32.794277Z", "level": "info", "event": "Image search started"}
+{"model": "ViT-B-32", "checkpoint": "laion2b_s34b_b79k", "device": "cpu", "timestamp": "2026-02-10T21:11:32.795276Z", "level": "info", "event": "Initializing CLIP Embedding Loader"}
+Parsing model identifier. Schema: None, Identifier: ViT-B-32
+Loaded built-in ViT-B-32 model config.
+Instantiating model architecture: CLIP
+Loading full pretrained weights from: C:\Users\Suman Vemula\.cache\huggingface\hub\models--laion--CLIP-ViT-B-32-laion2B-s34B-b79K\snapshots\1a25a446712ba5ee05982a381eed697ef9b435cf\open_clip_model.safetensors
+Final image preprocessing configuration set: {'size': (224, 224), 'mode': 'RGB', 'mean': (0.48145466, 0.4578275, 0.40821073), 'std': (0.26862954, 0.26130258, 0.27577711), 'interpolation': 'bicubic', 'resize_mode': 'shortest', 'fill_color': 0}
+Model ViT-B-32 creation process complete.
+Parsing tokenizer identifier. Schema: None, Identifier: ViT-B-32
+Attempting to load config from built-in: ViT-B-32
+Using default SimpleTokenizer.
+{"timestamp": "2026-02-10T21:12:00.158941Z", "level": "info", "event": "CLIP Embedding Model Loaded Successfully"}
+{"image": "D:\\sementic-image-search\\data\\query_images\\query.png", "timestamp": "2026-02-10T21:12:00.160865Z", "level": "info", "event": "Embedding single image"}
+{"vector_dim": 512, "timestamp": "2026-02-10T21:12:00.777154Z", "level": "info", "event": "Single image embedding successful"}
+HTTP Request: POST https://043fd2e3-8828-4d49-b2d1-a1b7d2502ff4.us-east-1-1.aws.cloud.qdrant.io:6333/collections/semantic-image-search/points/query "HTTP/1.1 200 OK"
+{"image_path": "D:\\sementic-image-search\\data\\query_images\\query.png", "total_results": 5, "timestamp": "2026-02-10T21:12:01.551486Z", "level": "info", "event": "Image search completed"}
