@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from semantic_image_search.backend.logger import GLOBAL_LOGGER as log
 from semantic_image_search.backend.exception.custom_exception import SemanticImageSearchException
 
+load_dotenv()
 
 # ------------------------------------------------------------
 # 1) Resolve BASE_DIR
@@ -86,3 +87,35 @@ if __name__== "__main__":
     config = Config()
     log.info("Config initialized successfully", status="OK")
     print(config.VECTOR_SIZE)
+
+
+###########################################
+# we can load env variables fron aws secretmanger (load env variables from Secrets Manager)
+
+# import os
+# import json
+# import boto3
+
+# def load_secrets_from_aws():
+#     try:
+#         client = boto3.client("secretsmanager", region_name="ap-south-1")
+
+#         response = client.get_secret_value(
+#             SecretId="semantic-image-search-secrets"
+#         )
+
+#         secret = json.loads(response["SecretString"])
+
+#         # convert secrets → environment variables
+#         for key, value in secret.items():
+#             os.environ[key] = value
+
+#         print("Secrets loaded successfully from AWS Secrets Manager")
+
+#     except Exception as e:
+#         print("Failed to load secrets:", e)
+    
+#Call it before load_dotenv()
+
+# load_secrets_from_aws()
+# load_dotenv()
