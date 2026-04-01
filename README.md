@@ -191,13 +191,13 @@ step.1   uvicorn semantic_image_search.backend.main:app --reload
 step.1  streamlit run .\semantic_image_search\ui\app.py
 
 ```
-## ML Application UI
+## Application UI
 
-# Search By text query
+#Search By text query
 ![image alt](https://github.com/suman520-git/sementic-image-search/blob/main/U1.png?raw=true)
 
 
-# Search By Image query
+#Search By Image query
 ![image alt](https://github.com/suman520-git/sementic-image-search/blob/main/U2.png?raw=true)
 
 ### 5.  Dockerization
